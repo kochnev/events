@@ -130,5 +130,7 @@ dmypy.json
 
 #Static files
 events/static
+events/media
 
 .idea/
+

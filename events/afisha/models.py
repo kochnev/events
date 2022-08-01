@@ -13,6 +13,7 @@ class Company(models.Model):
 class Event(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField()
+    poster = models.ImageField(upload_to='events', blank=True)
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
     date_from = models.DateTimeField()
     date_to = models.DateTimeField()
