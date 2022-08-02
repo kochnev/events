@@ -19,6 +19,15 @@ class Event(models.Model):
     date_to = models.DateTimeField()
     price = models.IntegerField()
 
+    CURRENCY = (
+        ('USD', 'USD'),
+        ('AMD', 'AMD'),
+        ('RUR', 'RUR'),
+    )
+
+    currency = models.CharField(max_length=3, choices=CURRENCY, default='AMD')
+    address = models.CharField(max_length=100)
+
     def __str__(self):
         return self.name
 
