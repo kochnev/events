@@ -11,7 +11,7 @@ class Company(models.Model):
 
 
 class Event(models.Model):
-    name = models.CharField(max_length=150)
+    name = models.CharField(max_length=85)
     description = models.TextField()
     poster = models.ImageField(upload_to='events')
     #company = models.ForeignKey(Company, on_delete=models.CASCADE)
