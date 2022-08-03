@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone
 
 # Create your models here.
 class Company(models.Model):
@@ -13,10 +13,11 @@ class Company(models.Model):
 class Event(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField()
-    poster = models.ImageField(upload_to='events', blank=True)
-    company = models.ForeignKey(Company, on_delete=models.CASCADE)
-    date_from = models.DateTimeField()
-    date_to = models.DateTimeField()
+    poster = models.ImageField(upload_to='events')
+    #company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    event_date = models.DateField()
+    time_from = models.TimeField(null=True, blank=True)
+    time_to = models.TimeField(null=True, blank=True)
     price = models.IntegerField()
 
     CURRENCY = (

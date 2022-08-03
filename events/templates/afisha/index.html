@@ -42,7 +42,9 @@
 
                         </div>
                         <div class="card-footer text-muted">
-                            {{event.date_from|date:"d M (D) H:i"}} - {{event.date_to|date:"H:i"}}
+                            {{event.event_date|date:"d M (D)"}}{{event.time_from|time:"H:i"}}
+                            {% if event.time_to %} - {% endif %}
+                            {{event.time_to|time:"H:i"}}
                         </div>
 
                 </div>
