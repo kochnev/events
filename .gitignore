@@ -129,7 +129,6 @@ dmypy.json
 .pyre/
 
 #Static files
-events/static
 events/media
 
 .idea/
