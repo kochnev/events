@@ -1,15 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container w-50">
-    <div class="row">
-        <div class="col">
+<div class="col-lg-8 mx-auto px-3">
             <div class="text-center pb-5">
                 <img src="{{event.poster.url}}" class="img-fluid "  alt="{{event.name}}">
             </div>
             <h2>{{event.name}}</h2>
             <p>{{event.description}}</p>
-        </div>
-    </div>
 </div>
 {% endblock content%}
