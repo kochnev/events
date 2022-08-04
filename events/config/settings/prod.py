@@ -27,4 +27,4 @@ DATABASES = {
 }
 
 
-ALLOWED_HOSTS = ['176.57.215.4',]
+ALLOWED_HOSTS = ['local-events.online','www.local-events.online']
