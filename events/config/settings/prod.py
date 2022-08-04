@@ -12,6 +12,7 @@ from .base import *
 #         'PORT': get_env_variable('DB_PORT'),
 #     }
 # }
+DEBUG = False
 
 SECRET_KEY = 'django-insecure-ui$dqal%9(%^2b5027p%h$57@gq-#1&21&g_v)t(-)lb-oq=zk'
 
