@@ -8,7 +8,6 @@ prod:
 	#django
 	sudo pip install Django==4.0.6
 
-	sudo pip install psycopg2-binary
 
 	#postgres
 	sudo apt install postgresql postgresql-contrib

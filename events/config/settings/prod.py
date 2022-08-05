@@ -28,4 +28,4 @@ DATABASES = {
 }
 
 
-ALLOWED_HOSTS = ['local-events.online','www.local-events.online']
+ALLOWED_HOSTS = ['dili-event.com','www.dili-event.com']
