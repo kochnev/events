@@ -8,6 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(89862723, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/89862723" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
     {% block css_top %}{% endblock css_top%}
     {% block script_top %}{% endblock script_top %}
 </head>
@@ -20,17 +37,19 @@
     </nav>
 </header>
 <main class="py-5">
-{% block content %}{% endblock content%}
+    {% block content %}{% endblock content%}
 </main>
 <!--<div class="container">-->
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
     <div class="col-md-4 d-flex align-items-center">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-      </a>
-      <span class="text-muted">© 2022 Events in Dilijan</span>
+        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+            <svg class="bi" width="30" height="24">
+                <use xlink:href="#bootstrap"></use>
+            </svg>
+        </a>
+        <span class="text-muted">© 2022 Events in Dilijan</span>
     </div>
-  </footer>
+</footer>
 <!--</div>-->
 <script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
 {% block script_bottom %}{% endblock script_bottom%}
