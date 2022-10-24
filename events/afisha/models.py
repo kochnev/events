@@ -28,6 +28,7 @@ class Event(models.Model):
 
     currency = models.CharField(max_length=3, choices=CURRENCY, default='AMD')
     address = models.CharField(max_length=100)
+    url = models.URLField(blank=True)
 
     def __str__(self):
         return self.name
