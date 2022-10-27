@@ -42,9 +42,11 @@
                             {{event.address}}
                         </p>
                         {% if event.price == 0 %}
-                        <div class="badge bg-success text-white mt-auto">Бесплатно</div>
+                        <div class="badge rounded-pill text-bg-success mt-auto">Бесплатно</div>
+                        {% elif event.price == 1 %}
+                        <div  class="badge rounded-pill text-bg-secondary mt-auto">Донат</div>
                         {% else %}
-                        <div class="badge bg-primary text-white mt-auto"> {{event.price}} {{event.currency}}</div>
+                        <div class="badge rounded-pill text-bg-primary mt-auto"> {{ event.price }} {{event.currency}}</div>
                         {% endif %}
 
                     </div>

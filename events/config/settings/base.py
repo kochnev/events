@@ -101,6 +101,10 @@ USE_I18N = True
 
 USE_TZ = True
 
+#Formating numbers. Example: 1000000 -> 1 000 000
+USE_THOUSAND_SEPARATOR = True
+NUMBER_GROUPING = (1, 3, 0)
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
