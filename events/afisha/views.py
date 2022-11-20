@@ -4,7 +4,7 @@ from .models import Event
 
 
 def index(request):
-    events = Event.objects.filter(event_date__gte=timezone.now()).order_by('event_date', '-time_from')
+    events = Event.objects.filter(event_date__gte=timezone.now()).order_by('event_date', 'time_from')
     return render(request, 'afisha/index.html', {'events': events})
 
 

@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils import timezone
+from datetime import timedelta
+
 
 # Create your models here.
 class Company(models.Model):
@@ -32,6 +34,12 @@ class Event(models.Model):
 
     def __str__(self):
         return self.name
+
+   # @property
+   # def is_today(self):
+   #     return timezone.now().date() == self.event_date
+
+
 
 
 
