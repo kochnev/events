@@ -9,6 +9,8 @@
     object-fit: cover;
 }
 
+
+
 </style>
 {% endblock css_top%}
 
@@ -17,12 +19,23 @@
 <meta property="og:description" content="Все самые интересные предстоящие события Дилижана.">
 <meta property="og:image" content="{% static 'afisha/img/linkedin_banner_image_2.png' %}">
 <meta property="og:url" content="https://dili-event.com">
-<meta property="og:site_name" content="Dili Event" />
+<meta property="og:site_name" content="Dili Event"/>
 <meta property="og:type" content="website"/>
 {% endblock open_graph%}
 
 {% block content %}
 <div class="album">
+    <ul class="nav nav-pills justify-content-center py-3">
+        <li class="nav-item">
+            <a class="nav-link {% if age == None %} active {% endif %}" aria-current="page" href="{% url 'index' %}">Все</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% if age == 'kids' %} active {% endif %}" href="{% url 'index'%}?age=kids">Дети</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% if age == 'adults' %} active {% endif %}" href="{% url 'index'%}?age=adults">Взрослые</a>
+        </li>
+    </ul>
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
             {% for event in events %}
@@ -32,7 +45,9 @@
                         <img src="{{event.poster.url}}" class="card-img-top" alt="{{event.name}}">
                     </a>
                     <div class="card-body d-flex flex-column align-items-start">
-                        <h5 class="card-title"><a class="link-unstyled" href="{% url 'event_detail' event.id%}">{{ event.name|upper }}</a></h5>
+                        <h5 class="card-title">
+                            <a class="link-unstyled" href="{% url 'event_detail' event.id%}">{{ event.name|upper }}</a>
+                        </h5>
                         <p class="card-text">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-geo-alt" viewBox="0 0 16 16">
@@ -44,9 +59,10 @@
                         {% if event.price == 0 %}
                         <div class="badge rounded-pill text-bg-success mt-auto">Бесплатно</div>
                         {% elif event.price == 1 %}
-                        <div  class="badge rounded-pill text-bg-secondary mt-auto">Донат</div>
+                        <div class="badge rounded-pill text-bg-secondary mt-auto">Донат</div>
                         {% else %}
-                        <div class="badge rounded-pill text-bg-primary mt-auto"> {{ event.price }} {{event.currency}}</div>
+                        <div class="badge rounded-pill text-bg-primary mt-auto"> {{ event.price }} {{event.currency}}
+                        </div>
                         {% endif %}
 
                     </div>
@@ -54,7 +70,7 @@
                         {{event.event_date|date:"d M (D)"}}
                         {{event.time_from|time:"H:i"}}
                         {% if event.time_to %}
-                            -
+                        -
                         {% endif %}
                         {{event.time_to|time:"H:i"}}
                     </div>
